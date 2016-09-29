@@ -1,0 +1,1 @@
+SELECT E.FirstName + '.' +  E.LastName + '@softuni.bg'AS "Full Email Address" FROM [dbo].Employees AS E
