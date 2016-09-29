@@ -1,0 +1,1 @@
+SELECT D.Name FROM [dbo].Departments AS D
