@@ -1,0 +1,1 @@
+SELECT MAX(w.MagicWandSize) FROM [dbo].[WizzardDeposits] AS w
