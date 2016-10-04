@@ -1,1 +1,1 @@
-SELECT MAX(w.MagicWandSize) FROM [dbo].[WizzardDeposits] AS w
+SELECT MAX(w.MagicWandSize) AS "LongestMagicWand" FROM [dbo].[WizzardDeposits] AS w
