@@ -17,3 +17,8 @@ WHERE T.Name LIKE 'M%'
    OR T.Name LIKE 'B%'
    OR T.Name LIKE 'E%'
 ORDER BY T.Name ASC
+
+--Fourth versin with shortened WildCard
+SELECT T.TownID, T.Name FROM [dbo].Towns AS T
+WHERE T.Name LIKE '[MKBE]%'
+ORDER BY T.Name ASC
