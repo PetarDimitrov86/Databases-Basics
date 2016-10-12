@@ -1,5 +1,5 @@
 CREATE TABLE DepositTypes(
-DepositTypeID INT PRIMARY KEY,
+DepositTypeID INT PRIMARY KEY IDENTITY,
 Name VARCHAR(20)
 )
 
@@ -15,15 +15,15 @@ CONSTRAINT FK_Deposits_Customer FOREIGN KEY (CustomerID) REFERENCES Customers(Cu
 )
 
 CREATE TABLE EmployeesDeposits(
-EmployeeID INT UNIQUE,
-DepositID INT UNIQUE,
+EmployeeID INT,
+DepositID INT,
 CONSTRAINT PK_EmployeesDeposits PRIMARY KEY(EmployeeID, DepositID),
 CONSTRAINT FK_EmployeesDeposits_Employees FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID),
 CONSTRAINT FK_EmployeesDeposits_Deposits FOREIGN KEY (DepositID) REFERENCES Deposits(DepositID)
 )
 
 CREATE TABLE CreditHistory(
-CreditHistoryID INT PRIMARY KEY,
+CreditHistoryID INT PRIMARY KEY IDENTITY,
 Mark CHAR(1),
 StartDate DATE,
 EndDate DATE,
@@ -32,7 +32,7 @@ CONSTRAINT FK_CreditHistory_CustomerID FOREIGN KEY (CustomerID) REFERENCES Custo
 )
 
 CREATE TABLE Payments(
-PaymentID INT PRIMARY KEY,
+PaymentID INT PRIMARY KEY IDENTITY,
 Date DATE,
 Amount DECIMAL (10, 2),
 LoanID INT,
@@ -40,7 +40,7 @@ CONSTRAINT FK_Payments_Loan FOREIGN KEY (LoanID) REFERENCES Loans(LoanID)
 )
 
 CREATE TABLE Users(
-UserID INT PRIMARY KEY,
+UserID INT PRIMARY KEY IDENTITY,
 UserName VARCHAR(20),
 Password VARCHAR(20),
 CustomerID INT UNIQUE,
@@ -51,4 +51,3 @@ ADD ManagerID INT
 
 ALTER TABLE Employees
 ADD CONSTRAINT FK_Employees_Employees FOREIGN KEY (ManagerID) REFERENCES Employees(EmployeeID)
-
