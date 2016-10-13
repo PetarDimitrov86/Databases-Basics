@@ -5,3 +5,6 @@ LEFT JOIN Projects AS p
 ON p.ProjectID = ep.ProjectID
 AND p.StartDate < '2005-01-01'
 WHERE e.EmployeeID = 24
+
+-- VER2 AND after WHERE
+-- AND p.StartDate < '2005-01-01'
